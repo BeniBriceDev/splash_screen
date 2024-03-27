@@ -98,7 +98,7 @@ class SplashScreen extends StatelessWidget {
                         boxShadow: const [
                           BoxShadow(
                             blurRadius: 1,
-                            color: const Color.fromARGB(255, 128, 123, 123),
+                            color: Color.fromARGB(255, 128, 123, 123),
                           ),
                         ]),
                     child: Padding(

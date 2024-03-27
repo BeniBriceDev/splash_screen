@@ -1,4 +1,4 @@
 class Name {
-  static String name = '/';
-  static String homePage = '/';
+  static String index = '/';
+  static String homePage = '/home';
 }

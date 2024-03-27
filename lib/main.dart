@@ -1,7 +1,6 @@
-import 'package:animated_widgets_flutter/widgets/size_animated.dart';
-import 'package:animator/animator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:splash_screen/routes/name.dart';
 import 'package:splash_screen/routes/route_page.dart';
 
 void main() {
@@ -22,10 +21,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
 
-      initialRoute: '/',
+      initialRoute: Name.index,
       getPages: PageList.pageList,
       // home: AnimatedLogo(),
     );
   }
 }
-
