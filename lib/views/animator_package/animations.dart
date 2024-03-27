@@ -57,3 +57,52 @@ class AnimatedLogo extends StatelessWidget {
     );
   }
 }
+
+class AnimatedLogo2 extends StatelessWidget {
+  const AnimatedLogo2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Animator<double>(
+      tween: Tween<double>(begin: 0, end: 300),
+      repeats: 0,
+      duration: Duration(seconds: 2),
+      builder: (context, anim1, child) => Animator<double>(
+        tween: Tween<double>(begin: -1, end: 1),
+        cycles: 0,
+        builder: (context, anim2, child) => Center(
+          child: Transform.rotate(
+            angle: anim2.value,
+            child: Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              height: anim1.value,
+              width: anim1.value,
+              child: SizeAnimatedWidget(
+                enabled: true,
+                duration: const Duration(milliseconds: 1500),
+                values: const [
+                  Size(100, 100),
+                  Size(100, 150),
+                  Size(200, 150),
+                  Size(200, 200)
+                ],
+                curve: Curves.linear,
+
+                //your widget
+                child: Container(
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.blue)),
+                  child: Container(
+                    color: Colors.white,
+                    height: 150,
+                    width: 150,
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
